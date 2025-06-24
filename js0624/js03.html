@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">我是段落</p>
+    <span>
+        <button onclick="btnClick()">Click</button>
+        <button onclick="btnClickB()">back</button>
+    </span>
+
+    <script>
+        // 改變段落內容：
+        // 取得段落位置 → 使用innerHTML改變內容
+        // 建立一個函式，執行後可執行
+
+        // function btnClick(){
+        //     document.getElementById("demo").innerHTML = "JavaScrpit";
+        // }
+
+
+        function btnClick(){
+            document.getElementById("demo").style.display = "none";
+        }
+
+        function btnClickB(){
+            document.getElementById("demo").style.display = "block";
+        }
+    </script>
+</body>
+</html>
