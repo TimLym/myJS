@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label>帳號：
+            <input type="text" id="accountInput">
+        </label>
+    </div>
+    
+    <div>
+        <label>密碼：
+            <input type="number" id="passwordInput">
+        </label>
+    </div>
+
+    <button id = "btn">commit</button>
+
+    <script>
+
+        let btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", ()=>{
+            let account = document.getElementById("accountInput").value;
+            let password = document.getElementById("passwordInput").value;
+            
+            if (account == "admin" && password == 1234){
+                window.alert("帳密正確");
+                console.log("帳密正確");
+            }else if (account == "admin" && password != 1234){
+                window.alert("密碼錯誤");
+                console.log(`${password} <= 密碼錯誤`);
+            }else if (account != "admin" && password == 1234){
+                window.alert("帳號錯誤");
+                console.log(`${account} <= 帳號錯誤`);
+            }else {
+                window.alert("帳密都錯");
+                console.log(`${account} <= 帳號錯誤`);
+                console.log(`${password} <= 密碼錯誤`);
+            }
+        }
+
+        )
+        
+        
+        // function btn(){
+        //     let account = document.getElementById("accountInput").value;
+        //     let password = document.getElementById("passwordInput").value;
+            
+        //     if (account == "admin" && password == 1234){
+        //         window.alert("帳密正確");
+        //         console.log("帳密正確");
+        //     }else if (account == "admin" && password != 1234){
+        //         window.alert("密碼錯誤");
+        //         console.log(`${password} <= 密碼錯誤`);
+        //     }else if (account != "admin" && password == 1234){
+        //         window.alert("帳號錯誤");
+        //         console.log(`${account} <= 帳號錯誤`);
+        //     }else {
+        //         window.alert("帳密都錯");
+        //         console.log(`${account} <= 帳號錯誤`);
+        //         console.log(`${password} <= 密碼錯誤`);
+        //     }
+        // }
+        
+    </script>
+</body>
+</html>

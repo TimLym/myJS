@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+</head>
+<body>
+    <script>
+        // 宣告兩個變數存放資料，並運算，賦值給另一變數
+
+        var a = 5;
+        console.log(a);
+        console.log(typeof a);
+        var b = 2;
+        console.log(b);
+        console.log(typeof b);
+        var c = a + b;
+        console.log(c);
+        console.log(typeof c);
+
+        console.log(a + "+" +b+ "=" +c);
+
+        //改用 樣板字串 template string (字串字面值)
+        //使用 反引號 `` ，變數 $ {變數名稱}
+
+        console.log(`${a} + ${b} = ${c}`);
+
+        // 四則運算
+        console.log("四則運算：")
+        //加
+        console.log(`${a} + ${b} = ${a+b}`);
+        // 減
+        console.log(`${a} - ${b} = ${a-b}`);
+        // 乘
+        console.log(`${a} * ${b} = ${a*b}`);
+        // 除
+        console.log(`${a} / ${b} = ${a/b}`);
+        // 取餘數
+        console.log(`${a} % ${b} = ${a%b}`);
+        // 次方數
+        console.log(`${a} ** ${b} = ${a**b}`);
+
+    </script>
+</body>
+</html>

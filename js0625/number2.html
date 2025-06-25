@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>請輸入被除數：
+        <input type="number" id="numberInput">
+    </label>
+    <label>請輸入除數：
+        <input type="number" id="divisorInput">
+    </label>
+    <p id="result"></p>
+
+    <button id="check">check</button>
+
+    <script>
+        let btn = document.querySelector("#check");
+        btn.addEventListener("click", () => {
+            let num = document.getElementById("numberInput").value;
+            let dinum = document.getElementById("divisorInput").value;
+            let res = document.getElementById("result");
+            let checkNum = "不是";
+            if (num % dinum == 0) {
+                checkNum = "是"
+            }
+            res.textContent = num + checkNum + dinum + " 的倍數";
+            
+        })
+
+
+    </script>
+
+</body>
+
+</html>

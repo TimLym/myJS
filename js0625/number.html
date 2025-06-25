@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>請輸入一個數字：
+        <input type="number" id="numberInput">
+    </label>
+    <p id="result"></p>
+
+    <button id="check">check</button>
+
+    <script>
+        let btn = document.querySelector("#check")
+
+        btn.addEventListener("click", () => {
+            let num = document.getElementById("numberInput").value;
+            num = Number(num);
+            // console.log(typeof num);
+            let res = document.getElementById("result");
+            
+            if (num == 0 || num %1 != 0) {
+                res.textContent = "請輸入一正整數" ;
+            }else if(num % 2 == 0){
+                res.textContent =num +" 是"+ "偶數" ;
+            }else{
+                res.textContent =num +" 是"+ "奇數" ;
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>

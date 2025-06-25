@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean</title>
+</head>
+<body>
+    <input type="number" id="numberInput">
+    <button onclick="btn01()">click</button>
+
+
+
+    <script>
+        //布林值比較
+
+        var score = 55;
+        // console.log(score>=60);
+
+        //判斷式
+
+        if (score > 60){
+            // console.log("及格");
+        }else{
+            // console.log("不及格");
+        }
+
+        // test
+        function btn01(){
+            // var userScore = 61;
+            // let input = document.getElementById("numberInput");
+            // let inputV = input.value;
+            // let sc = parseInt(inputV);
+
+            let sc = document.getElementById("numberInput").value;
+            if(sc >= 60){
+                console.log(`${sc}分=>及格`);
+            }else{
+                console.log(`${sc}分=>不及格`);
+            }
+        }
+
+        console.log("5 =='5'");
+        var a = "5";
+        var b = 5;
+        console.log(a == b);
+
+        console.log("5 === '5'");
+        console.log(a === b);
+
+    </script>
+</body>
+</html>

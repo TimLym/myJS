@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>請輸入成績：
+        <input type="number" id="scoreInput">
+    </label>
+    <button id="chbtn">check</button>
+    <script>
+        let btn = document.querySelector("#chbtn");
+        btn.addEventListener("click", () => {
+            let score = document.getElementById("scoreInput").value;
+            if (score >= 0 && score <= 100) {
+                if (score >= 60) {
+                    window.alert("及格");
+                    console.log(`${score} 分 及格`);
+                } else {
+                    window.alert("不及格");
+                    console.log(`${score} 分 不及格`);
+                }
+            } else {
+                window.alert("請輸入 0 ~ 100 之間的分數");
+                console.log(`${score} 請輸入 0 ~ 100 之間的分數`)
+            }
+        }
+        )
+    </script>
+</body>
+
+</html>
