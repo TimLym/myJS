@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label >數字1
+        <input type="number" id="inputNum1">
+    </label>
+    <br>
+    <label >數字2
+        <input type="number" id="inputNum2">
+    </label>
+    <div id="result"></div>
+    <button id="btnMax">max</button>
+
+    <script>
+        let btn = document.querySelector("#btnMax");
+        btn.addEventListener("click", ()=>{
+            let num1 = Number(document.getElementById("inputNum1").value);
+            let num2 = Number(document.getElementById("inputNum2").value);
+            
+            let res = document.getElementById("result");
+            let maxNum = num1;
+
+            if (num2>num1) {
+                maxNum = num2;
+            }
+            res.textContent = "MAX = " + maxNum;
+
+        })
+    </script>
+</body>
+</html>
