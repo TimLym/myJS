@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="waterConsumption">用水量：</label>
+    <input type="number" id="waterConsumption">
+    <button id="waterBillCheck">查詢</button>
+    <div id="waterResult"></div>
+    <div id="waterBillRate"></div>
+    <div id="waterBill"></div>
+    <script>
+        let btnCheck = document.querySelector("#waterBillCheck");
+        let waterRes = document.getElementById("waterResult");
+        let waterRate = document.getElementById("waterBillRate");
+        let waterCount = document.getElementById("waterBill");
+
+        btnCheck.addEventListener("click", billCheck);
+        function billCheck() {
+            let waterCon = document.getElementById("waterConsumption").value;
+            let a = 7.35, b = 9.45, c = 11.55, d = 12.075;
+            let total = 0;
+            let flag = d;
+            
+            if (waterCon.length === 0 || waterCon < 0){
+                window.alert("請輸入有效用水量");
+                return;
+            }
+
+            if (waterCon <=50){
+                if (waterCon <=30){
+                    if (waterCon <=10){
+                        total = Math.floor(waterCon*a);
+                        flag = a;
+                    }else{
+                        total = Math.floor(waterCon *b);
+                        flag = b;
+                    }
+                } else{
+                    total = Math.floor(waterCon *c);
+                    flag = c;
+                }
+            } else{
+                total = Math.floor(waterCon *d);
+                flag = d;
+            }
+            waterRes.textContent = "用水度數：" + waterCon + "度";
+            waterRate.textContent = "每度為：" + flag + "元";
+            waterCount.textContent = "實付水費為：" + total + "元";
+
+            // console.log(total);
+            // console.log(flag);
+        }
+    </script>
+</body>
+</html>

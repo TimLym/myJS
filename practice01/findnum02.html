@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="numCount">要幾個數字做比較：</label>
+    <input type="number" id="numCountInput" min="1">
+    <button id="genNum">產生數字</button>
+    <div id="result"></div>
+
+    <script>
+        let genNumBtn = document.getElementById("genNum");
+        genNumBtn.addEventListener("click", genNums);
+
+        function genNums () {
+            let numCount = document.getElementById("numCountInput").value;
+            let count = parseInt(numCount);
+
+            let nums = [];
+            for (let i = 0 ; i < count; i++) {
+                nums.push(Math.floor(Math.random() *101));
+            }
+
+            let sortedNums = [...nums].sort((a,b)=> b-a);
+            let maxNum = sortedNums[0];
+
+            let res = document.getElementById("result");
+            res.innerHTML = `
+            <p>產生的數字：${nums.join(", ")}</p>
+            <p>排序後(大到小)：${sortedNums.join(", ")}</p>
+            <p>最大的數字是：${maxNum}</p>
+            `;
+
+            // console.log(nums);
+            // console.log(nums.join(", "));
+        }
+    </script>
+</body>
+</html>
