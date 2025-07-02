@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>票價種類：<br>
+        1. 全票 => 500元<br>
+        2. 優待票為全票的八折<br>
+        3. 敬老票為優待票的七折<br>
+    </div>
+    <div>
+        <label for="ticketCount">全票張數：</label>
+        <input type="number" id="ticketCount">
+    </div>
+    <div>
+        <label for="ticketDiscount">優待票張數：</label>
+        <input type="number" id="ticketDiscount">
+    </div>
+    <div>
+        <label for="ticketForOld">敬老張數：</label>
+        <input type="number" id="ticketForOld">
+    </div>
+    <button id="submit">提交</button>
+    
+    <div id="result"></div>
+
+    <script>
+        let submitBtn = document.querySelector("#submit");
+        submitBtn.addEventListener("click", calcTicket);
+
+        function calcTicket(){
+            let ticCount = document.getElementById("ticketCount").value;
+            let ticDiscount = document.getElementById("ticketDiscount").value;
+            let ticForOld = document.getElementById("ticketForOld").value;
+            let res = document.getElementById("result");
+            let ticketPrice = 500;
+            let ticketDiscount = ticketPrice * 0.8;
+            let ticketForOld = ticketPrice *0.7;
+            let totalCount = 0;
+            let typesRes = "";
+
+            if (ticCount.length === 0 || ticDiscount.length === 0 || ticForOld.length === 0||
+                ticCount < 0 || ticDiscount < 0 || ticForOld < 0){
+                window.alert("請輸入有效種類與張數");
+                return;
+            }else{
+                totalCount = ticCount*ticketPrice + ticDiscount*ticketDiscount + ticForOld*ticketForOld;
+                res.innerHTML = `購買全票 => ${ticCount} 張 <br> 
+                購買優待票 => ${ticDiscount} 張 <br>
+                購買敬老票 => ${ticForOld} 張 <br>
+                「票價為： ${totalCount}元」
+                `;
+            }
+
+            
+        }
+    </script>
+</body>
+</html>
