@@ -7,9 +7,15 @@
 </head>
 <body>
     <script>
+        res = 0;
         for (i =1; i <=9; i++){
             for (j=1; j<=9; j++){
-                document.write(`${i} * ${j} = ${i*j}<br>`);
+                document.write(`${i}*${j}=`);
+                res = i*j;
+                if(res < 10){
+                    document.write("0");
+                }
+                document.write(`${res}&nbsp&nbsp&nbsp`);
             }
             document.write("<br>")
         }
