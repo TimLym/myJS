@@ -13,19 +13,28 @@
         let passCount = 0;
         while (true){
             let score = window.prompt("請輸入成績：");
-            if (score == -1 ){
+            if (score == -1 || score == null){
                 break;
             }else if (isNaN(score) == true){
                 window.alert("非數字，請重新輸入！");
-            }else if (score < 1 || score > 100){
+            }else if (score < 0 || score > 100){
                 window.alert("不是有效範圍，請重新輸入！")
             }else{
-                scoreTotal = Number(score) + scoreTotal
+                
                 if (score <60){
+                    if (score.length>2){
+                        window.alert("重複輸入了0或按到很多空白！");
+                        continue;
+                    }else if(score.length == 0 || score.trim() == ""){
+                        window.alert("未輸入分數");
+                        continue;
+                    }
+                    console.log(score.length);
                     unPassCount++;
                 }else{
                     passCount++;
                 }
+                scoreTotal = Number(score) + scoreTotal
             }
         }
 
