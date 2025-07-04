@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="inputNum"></label>
+    <input type="number" id="inputNum">
+    <button id="guessBtn">猜</button>
+    
+    <script>
+        let guessBtn = document.querySelector("#guessBtn");
+        guessBtn.addEventListener("click", guessNum);
+        let binggoNum = Math.floor(Math.random()*100+1);
+        let guessCount = 0;
+        console.log(binggoNum);
+
+        function guessNum (){
+            let num = document.getElementById("inputNum").value;
+            
+            if (guessCount<3){
+                if (num == binggoNum){
+                    window.alert(`超強！猜中數字${binggoNum}!`);
+                }else{
+                    console.log(num);
+                    guessCount++;
+                    if (binggoNum > num){
+                        window.alert("猜小了，再大一點");
+                    }else{
+                        window.alert("猜大了，在小一點");
+                    }
+                }
+            }else{
+                window.alert("猜超過3次，請重來");
+                binggoNum = Math.floor(Math.random()*100+1);
+                console.log(binggoNum);
+            }
+        }
+    </script>
+</body>
+</html>
