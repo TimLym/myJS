@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let binggoNum = Math.floor(Math.random() * 100 + 1);
+        let maxNum = 100;
+        let minNum = 1;
+        window.alert(`請猜猜看${minNum}到${maxNum}的數字`);
+        console.log(binggoNum);
+
+        while (true) {
+            let numGuess = window.prompt();
+            if (numGuess < 1 || numGuess > 100) {
+                window.alert("請輸入1-100的數字唷！");
+                continue;
+            } else {
+                if (numGuess == binggoNum) {
+                    window.alert(`超強！猜中數字${binggoNum}!`);
+                    break;
+                } else {
+                    if (binggoNum > numGuess) {
+                        minNum = numGuess;
+                        window.alert(`太小了，(提示${minNum}-${maxNum})`);
+                    } else {
+                        maxNum = numGuess;
+                        window.alert(`太大了，(提示${minNum}-${maxNum})`);
+                    }
+                }
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
