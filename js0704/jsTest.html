@@ -22,11 +22,11 @@
             }else{
                 
                 if (score <60){
-                    if (score == "00" || score.length>2){
-                        window.alert("重複輸入了0或按到很多空白！");
+                    if (score.length == 0){
+                        window.alert("未輸入分數！");
                         continue;
-                    }else if(score.length == 0 || score.trim() == ""){
-                        window.alert("未輸入分數");
+                    }else if(score == "00" || score.length>2 || score.trim() == ""){
+                        window.alert("輸入過多的0或空白！");
                         continue;
                     }
                     console.log(score.length);
