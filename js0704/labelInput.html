@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="n1">數值1</label>
+    <input type="number" id="n1">
+    <br>
+    <label for="n2">數值2</label>
+    <input type="number" id="n2">
+    <br>
+    <button id="plusBtn">加總</button>
+    <br>
+    <p id="result">結果</p>
+
+    <script>
+        let plusBtn = document.querySelector("#plusBtn");
+        plusBtn.addEventListener("click", plus);
+
+        function plus() {
+            let n1 = parseInt(document.getElementById("n1").value);
+            let n2 = parseInt(document.getElementById("n2").value);
+
+            document.getElementById("result").textContent = n1 + n2;
+        }
+
+        console.log(typeof(n1));
+    </script>
+</body>
+</html>

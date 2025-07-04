@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>While</h2>
+    <hr>
+    <script>
+        let total = 0;
+        let num = 0;
+
+        while (num <= 5){
+            total = total+num;
+            num++;
+        }
+
+        document.write(`total = ${total}`);
+
+        document.write("<br>");
+
+        do{
+            
+            let month = prompt("請輸入月份");
+            
+            if (month == null){
+                break;
+            }else if (month == ""){
+                window.alert("月份空白，請再輸入");
+                continue;
+            }else if (month<1 || month > 12 || isNaN(Number(month)) == true ){
+                window.alert("請輸入正確月份");
+                continue;
+            }
+            window.alert("月份為"+ month +"月");1
+        }while(true);  // true =>1 , false =>0
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="n1">數值1</label>
+    <input type="number" id="n1">
+    <br>
+    <button id="plusBtn">+</button>
+    <button id="minusBtn">-</button>
+    <button id="timesBtn">*</button>
+    <button id="dividedBtn">/</button>
+    <br>
+    <label for="n2">數值2</label>
+    <input type="number" id="n2">
+    <br>
+
+    <p id="result">結果</p>
+
+    <script>
+        let n1 = parseInt(document.getElementById("n1").value);
+        let n2 = parseInt(document.getElementById("n2").value);
+        let plusBtn = document.querySelector("#plusBtn");
+        plusBtn.addEventListener("click", plus);
+        let minusBtn = document.querySelector("#minusBtn");
+        minusBtn.addEventListener("click", minus);
+        let timesBtn = document.querySelector("#timesBtn");
+        timesBtn.addEventListener("click", times);
+        let dividedBtn = document.querySelector("#dividedBtn");
+        dividedBtn.addEventListener("click", divided);
+
+        let res = 0;
+        function plus() {
+            res = n1 + n2;
+            document.getElementById("result").textContent = res;
+        }
+        function minus() {
+            res = n1 - n2;
+            document.getElementById("result").textContent = res;
+        }
+        function times() {
+            res = n1 * n2;
+            document.getElementById("result").textContent = res;
+        }
+        function divided() {
+            res = n1 / n2;
+            document.getElementById("result").textContent = res;
+        }
+
+    </script>
+</body>
+
+</html>
