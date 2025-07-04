@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result">結果</p>
+    <script>
+        let scoreTotal = 0;
+        let unPassCount = 0;
+        let passCount = 0;
+        while (true){
+            let score = window.prompt("請輸入成績：");
+            if (score == -1 || score == null){
+                break;
+            }else if (isNaN(score) == true || score.trim() == ""){
+                window.alert("非數字，請重新輸入！");
+                console.log(score);
+                console.log(typeof(score));
+            }else if (score < 0 || score > 100){
+                window.alert("不是有效範圍，請重新輸入！")
+            }else{
+                scoreTotal = Number(score) + scoreTotal
+                if (score <60){
+                    unPassCount++;
+                }else{
+                    passCount++;
+                } 
+            }
+        }    
+        
+
+        let totalCount = unPassCount+passCount;
+
+        document.getElementById("result").innerHTML =`<p>及格人數：${passCount} 人</p><br>
+            <p>不及格人數：${unPassCount} 人</p><br>
+            <p>全班總分：${scoreTotal} 分</p><br>
+            <p>全班平均：${scoreTotal/totalCount} 分</p>`;
+    </script>
+</body>
+</html>
