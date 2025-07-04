@@ -22,7 +22,7 @@
             }else{
                 
                 if (score <60){
-                    if (score.length>2){
+                    if (score == "00" || score.length>2){
                         window.alert("重複輸入了0或按到很多空白！");
                         continue;
                     }else if(score.length == 0 || score.trim() == ""){
