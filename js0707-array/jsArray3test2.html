@@ -59,6 +59,39 @@
         console.log("forEach方法");
         console.log("最大值："+forEachMaxNum);
         console.log("最小值："+forEachMinNum);
+
+        // map 
+        
+        let mapNumMax = arr1[0];
+        let mapNumMin = arr1[0];
+
+        arr1.map((n)=>{
+            if(n>mapNumMax){
+                mapNumMax = n;
+            }
+            if(n<mapNumMin){
+                mapNumMin = n;
+
+            }
+        })
+        console.log("map方法");
+        console.log("最大值："+mapNumMax);
+        console.log("最小值："+mapNumMin);
+
+        // sort
+        arr1.sort((a,b)=>a-b);
+        console.log("sort方法");
+        console.log("最大值："+arr1[arr1.length-1]);
+        console.log("最小值："+arr1[0]);
+
+        // math
+
+        maxNum = Math.max(...arr1);
+        minNum = Math.min(...arr1);
+        console.log("Math方法");
+        console.log(`最大值：${maxNum} 最小值：${minNum}`);
+
+
     </script>
 </body>
 </html>
