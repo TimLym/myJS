@@ -28,6 +28,8 @@
                 if (num == binggoNum){
                     window.alert(`超強！猜中數字${binggoNum}!`);
                    binggoNum = Math.floor(Math.random()*100+1);
+                   minNum = 1;
+                   maxNum = 100;
                    console.log(binggoNum);
                 }else{
                     if (binggoNum > num){
