@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 顯示陣列中所有元素之法
+
+        let arr1= [5,60,3,90,33,1,100];
+
+        //for
+        let forMaxNum = arr1[0];
+        let forMinNum = arr1[0];
+
+        for (i = 0 ; i<arr1.length ; i++){
+            if (arr1[i]>forMaxNum){
+                forMaxNum = arr1[i];
+            }
+            if (arr1[i]<forMinNum){
+                forMinNum = arr1[i];
+            }
+        }
+        console.log("for方法");
+        console.log("最大值："+forMaxNum);
+        console.log("最小值："+forMinNum);
+
+
+        // for of
+        let forOfMaxNum = arr1[0];
+        let forOfMinNum = arr1[0]
+
+        for (let n of arr1){
+            if (n>forOfMaxNum){
+                forOfMaxNum = n;
+            }
+            if (n<forOfMinNum){
+                forOfMinNum = n;
+            }
+        }
+        console.log("forOF方法");
+        console.log("最大值："+forOfMaxNum);
+        console.log("最小值："+forOfMinNum);
+
+        // for each
+        let forEachMaxNum = arr1[0];
+        let forEachMinNum = arr1[0];
+
+        arr1.forEach((n) =>{
+            if (n>forEachMaxNum){
+                forEachMaxNum = n;
+            }
+            if (n<forEachMinNum){
+                forEachMinNum = n;
+            }
+        });
+        console.log("forEach方法");
+        console.log("最大值："+forEachMaxNum);
+        console.log("最小值："+forEachMinNum);
+    </script>
+</body>
+</html>
