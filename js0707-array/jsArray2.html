@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 顯示陣列中所有元素之法
+
+        let arr1= [3,9,4,7,5,"acv654"];
+
+        //方法1
+
+        for (i = 0 ; i<arr1.length ; i++){
+            console.log(arr1[i]);
+        }
+
+
+        // 方法2 for of 只能用在陣列
+        /* for (let 變數 of 陣列名稱){ 
+         ...
+        }
+        */ 
+
+        for (let n of arr1){
+            console.log(n);
+        }
+
+        // 方法3 for each
+        /* 陣列名稱.array.forEach((變數) => {
+            ...
+        });
+        */
+
+        arr1.forEach((n) =>{
+            console.log(n);
+        });
+    </script>
+</body>
+</html>
