@@ -8,13 +8,23 @@
 </head>
 
 <body>
-    <label for="inputNum"></label>
-    <input type="number" id="inputNum">
-    <button id="guessBtn">猜</button>
+    <div id="guessGame" style="display: block;">
+        <label for="inputNum"></label>
+        <input type="number" id="inputNum">
+        <button id="guessBtn">猜</button>
+    </div>
+
+    <button id="reset" style="display: none;">再玩一次?</button>
 
     <script>
         let guessBtn = document.querySelector("#guessBtn");
         guessBtn.addEventListener("click", guessNum);
+
+        let resetBtn = document.querySelector("#reset");
+        resetBtn.addEventListener("click", resetNum);
+
+        let guessGame = document.getElementById("guessGame");
+
         let bingo = Math.floor(Math.random() * 100 + 1);
         let maxNum = 100;
         let minNum = 1;
@@ -30,18 +40,8 @@
             } else {
                 if (num == bingo) {
                     window.alert(`超強！猜中數字${bingo}!`);
-                    let play = window.confirm("再玩一次?")
-                    if (play == true){
-                        document.getElementById("inputNum").value = "";
-                        bingo = Math.floor(Math.random() * 100 + 1);
-                        minNum = 1;
-                        maxNum = 100;
-                        console.log(bingo);
-                    }else {
-                        document.getElementById("inputNum").value = "";
-                        return;
-                    }
-                    
+                    guessGame.style.display = "none";
+                    resetBtn.style.display = "block";
                 } else {
                     if (bingo > num) {
                         minNum = num;
@@ -52,6 +52,19 @@
                     }
                 }
             }
+        }
+
+        function resetNum (){
+            document.getElementById("inputNum").value = "";
+            bingo = Math.floor(Math.random() * 100 + 1);
+            minNum = 1;
+            maxNum = 100;
+            console.log(bingo);
+            guessGame.style.display = "block";
+            resetBtn.style.display = "none";
+            
+            
+            
         }
     </script>
 </body>
