@@ -29,9 +29,7 @@
         function ballPool(scope, count, secondScope = 0) {
             let round = 0;
             let genLotto = [];
-            let secondNum = 0;
-            let sortGenLotto = [];
-
+            
             while (round < count) {
                 let ball = Math.floor(Math.random() * scope + 1);
                 if (genLotto.includes(ball) != true) {
@@ -42,7 +40,7 @@
 
             }
             if (secondScope != 0) {
-                secondNum = Math.floor(Math.random() * secondScope + 1);
+                let secondNum = Math.floor(Math.random() * secondScope + 1);
                 return { balls: genLotto, secondBall: secondNum };
 
             } else {
