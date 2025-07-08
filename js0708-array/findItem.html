@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1=["html","css","js","figma","ui"];
+
+        // 找元素是否存在於陣列裡
+
+        // 方法1
+
+        for (i=0; i<arr1.length;i++){
+            if(arr1[i]==="css"){
+                window.alert(`css找到，在第${i+1}個位置`);
+                break;
+
+            }
+        }
+
+        // 方法2
+
+        let searchIndex = arr1.indexOf("css");
+        if(searchIndex !== -1){
+            window.alert(`找到了，在第${searchIndex+1}個位置`);
+        }else{
+            window.alert("不存在");
+        }
+
+        // 方法3
+        
+        let find = arr1.includes("ui");
+        if(find){
+            console.log("找到了");
+        }else{
+            console.log("不存在");
+        }
+
+        // 使用三元運算子
+        (find) ? console.log("找到了") : console.log("不存在");
+
+
+    </script>
+</body>
+</html>
