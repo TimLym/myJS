@@ -26,16 +26,13 @@
         // 1=> 威力彩 一區：1~38 6個號碼 二區：1~8 1個號碼
         // 2=> 大樂透 一區：1~49 6個號碼 二區：1~49 1個號碼
         // 3=> 539 一區：1~39 5個號碼 
-        function ballPool(scope, count, secondScope = 0) {
-            let round = 0;
+        function ballPool(scope, count, secondScope = 0) {            
             let genLotto = [];
             
-            while (round < count) {
+            while (genLotto.length < count) {
                 let ball = Math.floor(Math.random() * scope + 1);
                 if (genLotto.includes(ball) != true) {
                     genLotto.push(ball);
-                    round++;
-
                 }
 
             }
