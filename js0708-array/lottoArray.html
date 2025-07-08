@@ -63,13 +63,15 @@
                 <p>第二區號碼：${lottoBalls.secondBall}</p>
                 `;
             } else if (playNum === "2") {
-                let lottoBalls = ballPool(49, 6, 49);
+                let lottoBalls = ballPool(49, 7);
+                console.log(`大樂透號碼7碼：${lottoBalls.balls}`);
+                let specNum = lottoBalls.balls.pop();
                 let sortLottoBalls = [...lottoBalls.balls].sort((a, b) => a - b);
                 result.innerHTML = `
                 <p>大樂透：</p>
                 <p>排序前號碼：${lottoBalls.balls}</p>
                 <p>排序後號碼：${sortLottoBalls}</p>
-                <p>第二區號碼：${lottoBalls.secondBall}</p>
+                <p>第二區號碼：${specNum}</p>
                 `;
             }else if (playNum === "3"){
                 let lottoBalls = ballPool(39,5);
