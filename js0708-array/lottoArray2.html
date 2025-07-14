@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>輸入1=>威力彩</p>
+    <p>輸入2=>大樂透</p>
+    <p>輸入3=>539</p>
+    <label for="kindOf">請輸入：</label>
+    <input type="number" id="kindOfInput">
+    <button id="gen">產生號碼</button>
+    <p id="result">結果</p>
+    <script>
+        // 輸出：未排序_____、已排序(遞增)_____
+        let result = document.getElementById("result");
+
+        let genBtn = document.querySelector("#gen");
+        genBtn.addEventListener("click", genNum);
+
+
+        // 1=> 威力彩 一區：1~38 6個號碼 二區：1~8 1個號碼
+        // 2=> 大樂透 一區：1~49 6個號碼 二區：1~49 1個號碼
+        // 3=> 539 一區：1~39 5個號碼 
+        function ballPool(scope, count, secondScope = 0) {            
+            let genLotto = [];
+            
+            while (genLotto.length < count) {
+                let ball = Math.floor(Math.random() * scope + 1);
+                if (genLotto.includes(ball) != true) {
+                    genLotto.push(ball);
+                }
+
+            }
+            if (secondScope != 0) {
+                let secondNum = Math.floor(Math.random() * secondScope + 1);
+                return { balls: genLotto, secondBall: secondNum };
+
+            } else {
+                return { balls: genLotto, secondBall: "無" };
+            }
+
+        }
+
+        function resultLotto (title, balls, secondBall) {
+            let sorted = [...balls].sort((a,b)=> a-b);
+            result.innerHTML = `
+                <p>${title}</p>
+                <p>排序前號碼：${balls}</p>
+                <p>排序後號碼：${sorted}</p>
+                <p>第二區號碼：${secondBall}</p>
+                `;
+        }
+
+        function genNum() {
+
+            let playNum = document.getElementById("kindOfInput").value;
+
+            if (playNum === "1") {
+                let lottoBalls = ballPool(38, 6, 8);
+                resultLotto("威力彩", lottoBalls.balls, lottoBalls.secondBall);
+            } else if (playNum === "2") {
+                let lottoBalls = ballPool(49, 7);
+                console.log(`大樂透號碼7碼：${lottoBalls.balls}`);
+                let specNum = lottoBalls.balls.pop();
+                resultLotto("大樂透", lottoBalls.balls, specNum);
+            }else if (playNum === "3"){
+                let lottoBalls = ballPool(39,5);
+                resultLotto("金彩539", lottoBalls.balls, lottoBalls.secondBall);
+            }else {
+                result.innerHTML=`請輸入1、2、3`;
+            }
+        }
+    </script>
+</body>
+
+</html>
