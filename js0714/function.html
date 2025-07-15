@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">請輸入姓名：</label>
+    <input type="text" id="name">
+    <button id="submit">submit</button>
+    <p id="result"></p>
+    <script>
+        
+        //建立函式-有參數有傳回值
+        function sum(a,b) {
+            return a+b;
+        }
+        console.log(sum(3,5));
+
+        // function sayHi(name) {
+        //     windowtim.alert(`${name}, HI!`);
+        // }
+        // let name = window.prompt("你是誰?");
+        // sayHi(name);
+
+        let submit = document.querySelector("#submit");
+        submit.addEventListener("click", () => {
+            sayHi(getName());
+        });
+        
+        function getName() {
+            let name = document.getElementById("name").value;
+            return name;
+
+        }
+        
+        function sayHi(name) {
+            let res = document.getElementById("result");
+            res.textContent = "Hi, " + name;
+            // console.log(typeof getName);
+        }
+        
+       
+
+
+        
+    </script>
+</body>
+</html>

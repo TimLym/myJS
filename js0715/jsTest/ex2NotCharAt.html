@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ex6
+        function position(string){
+            if (string === "") return -1;
+            let arr = string.split("");
+            for (i=0; i<arr.length; i++){
+                if(arr[i] === arr[i].toUpperCase()){
+                    return arr[i]+" "+i;
+                }
+            }
+            return -1;
+        }
+        console.log(position("abcd"));
+        console.log(position("Abcd"));
+        console.log(position("abCD"));
+        console.log(position(""));
+
+        //ex4 
+        function isUpperCase(string) {
+            if (string === "") return false;
+            if ((string[0] === string[0].toUpperCase())) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(isUpperCase("ABCD"));
+        console.log(isUpperCase(""));
+        console.log(isUpperCase("aBCD"));
+
+        
+    </script>
+</body>
+
+</html>
