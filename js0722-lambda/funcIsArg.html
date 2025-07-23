@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 將函式當作其他函式的參數
+
+        let sayHi = () => {
+            return "HI,";
+        }
+
+        let welcome = (callback, name) =>{
+            console.log(callback(), name);
+        }
+
+        welcome(sayHi, "Tim");
+        
+        let sayHi2 = () => {
+            return "HI,"; 
+        }
+
+        let welcome2 = (name) =>{
+            return sayHi2() + name;
+        }
+
+        console.log(welcome2("tim"));
+        
+        // 將函式當作其他函式的回傳值 => 指傳回值的內容是一個函式
+
+        let sayHi3 = (name) => {
+            return function () {
+                console.log(name);
+            }
+        }
+        
+        sayHi3("Tim2")();
+
+        let sayHi4 = (name) => {
+            // 傳回值帶有參數
+            return function (str) {
+                console.log("HI! " +name +" "+ str);
+            }
+        }
+
+        sayHi4("Tim3")("Welcome!");
+
+    </script>
+</body>
+</html>

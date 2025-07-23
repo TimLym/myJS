@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 建立add函式，...其餘參數要給定一變數名稱，來接收不同參數值的個數使用
+        // 會將傳入的參數一陣列，再利用forloop遍歷處理。
+        let add = (...number) => {
+            let tot = 0;
+            for (n of number) {
+                tot+=n;    
+            }
+            return tot;
+        }
+
+        console.log(add(1,2,3,4,5));
+        console.log(add(1,2,3,4,5,6,7,8,9,10));
+    </script>
+</body>
+</html>

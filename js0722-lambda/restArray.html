@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 其餘陣列參數
+        let add = (...[numbers]) => {
+            let tot = 0;
+            for (n of numbers) {
+                tot+=n;    
+            }
+            return tot;
+        }
+
+        console.log(add([1,2,3,4,5]));
+        console.log(add([1,2,3,4,5,6,7,8,9,10]));
+    </script>
+</body>
+</html>

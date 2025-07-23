@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="open">OPEN</button>
+    <button id="close">CLOSE</button>
+    <script>
+        // 開新視窗
+        let btnOpen = document.querySelector("#open");
+        btnOpen.addEventListener("click", openNewWindow);
+        let btnClose = document.querySelector("#close");
+        btnClose.addEventListener("click", closeNewWindow);
+
+        let newWindow = null;
+        function openNewWindow () {
+            // 開新分頁
+            // window.open();
+
+            // 開新視窗
+            newWindow= window.open('BOM.html', 'newWindow', 'left=100, width=200, height=300');
+        }
+        
+        // 關閉視窗
+        function closeNewWindow () {
+            if (newWindow) {
+                newWindow.close();
+            }
+        }
+    </script>
+</body>
+</html>

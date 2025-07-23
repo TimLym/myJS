@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="clock">倒數計時3秒</p>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+    <script>
+        // 開新視窗
+        let btnStop = document.querySelector("#stop");
+        let btnStart = document.querySelector("#start");
+        let clock = document.getElementById("clock");
+
+        btnStart.addEventListener("click", startClock);
+        btnStop.addEventListener("click", stopClock);
+        
+        let timer = null;
+        function startClock () {
+            if (timer == null){
+                let countTime = 3;
+                
+                timer =  window.setInterval(()=>{
+                    countTime = (countTime - 0.01).toFixed(2) ;
+                    clock.textContent = countTime;                
+                    if (countTime<=0){
+                        window.clearInterval(timer);
+                        timer = null;
+                    }
+                },10)                
+            }
+        }
+
+        function stopClock(){
+            window.clearInterval(timer);
+            timer = null;
+        }
+
+    </script>
+</body>
+</html>

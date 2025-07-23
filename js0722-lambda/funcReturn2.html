@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函數的傳回超過一個以上，利用陣列或物件
+        // 建立一個addsub()函式，計算和與差，並且傳回和與差二個值
+
+        // 陣列
+        let addsub = (num1,num2) => {
+            let add = num1+num2;
+            let sub = num1-num2;
+            
+            return [add,sub];
+        }
+        let res = addsub(2,3);
+        console.log(`兩數相加 = ${res[0]}`);
+        console.log(`兩數相減 = ${res[1]}`);
+
+        // 物件
+        let addsub2 = (num1,num2) => {
+            let add = num1+num2;
+            let sub = num1-num2;
+            
+            return {resAdd:add, resSub:sub};
+        }
+        res = addsub2(5,8);
+        console.log(`兩數相加 = ${res.resAdd}`);
+        console.log(`兩數相減 = ${res.resSub}`);
+    </script>
+</body>
+</html>

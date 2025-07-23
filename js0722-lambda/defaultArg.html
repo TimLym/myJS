@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 計算梯形面積
+        let top1 = parseInt(window.prompt("請輸入上底"));
+        let bottom = parseInt(window.prompt("請輸入下底"));
+        let high = parseInt(window.prompt("請輸入高"));
+
+        function area (n1, n2, n3){
+            return (n1+n2)*n3/2;
+        }
+        console.log(area(top1,bottom,high));
+
+        
+        let area2 = function (n1,n2,n3) {
+            return (n1+n2)*n3/2;
+        }
+        console.log(area2(top1,bottom,high));
+        
+        
+        let area3 = (n1,n2,n3) => {
+            return (n1+n2)*n3/2;
+        }
+        console.log(area3(top1,bottom,high));
+
+
+        // 預設參數
+        let area4 = (n1,n2,n3=10) => {
+            return (n1+n2)*n3/2;
+        }
+        //高度沒有給值，則使用預設參數
+        console.log(area4(top1,bottom));
+        //高度有給值，則使用給定參數
+        console.log(area4(top1,bottom,15));
+
+        // 具名參數，可以不用按照順序給值。必須使用物件型別{}"傳送"與"接收"指定參數
+        let area5 = ({n1,n2,n3=10}) => {
+            return (n1+n2)*n3/2;
+        }
+        console.log(area5({n3:10, n1:20, n2:5}));
+    </script>
+</body>
+</html>

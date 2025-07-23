@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="clock">線上時鐘</p>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+    <script>
+        // 開新視窗
+        let btnStop = document.querySelector("#stop");
+        let btnStart = document.querySelector("#start");
+        let clock = document.getElementById("clock");
+
+        btnStart.addEventListener("click", startClock);
+        btnStop.addEventListener("click", stopClock);
+        
+        let timer;
+        function startClock () {
+            timer =  window.setInterval(()=>{
+                clock.textContent = new Date().toLocaleString();
+            },1000)
+        }
+
+        function stopClock(){
+            window.clearInterval(timer);
+        }
+
+        // window.addEventListener("load", ()=>{
+        //     // setInerval(function(), 預設1000ms) 每隔一段時間，做裡面的事
+        //     let timer = window.setInterval(()=>{
+        //         clock.textContent = new Date().toLocaleString();
+        //     },1000)
+        // });
+
+    </script>
+</body>
+</html>

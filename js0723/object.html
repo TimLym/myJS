@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 建立物件
+        let admin = {
+            // 屬性成員
+            name : "tim",
+            age : 18,
+            weight : 65,
+            high : 170,
+
+            // 方法成員
+            showMsg : function () {
+                console.log("Hi, 我是" + admin.name);
+                console.log("我今年" + this.age + "歲");
+            }
+        };
+
+        // 取得物件屬性
+        console.log(admin.name);
+        console.log(admin["weight"] + "kg");
+        admin.showMsg();
+
+        // 變更物件的屬性
+        admin.age = 20;
+        console.log(admin.age);
+
+        // 刪除物件的屬性
+        console.log(admin["high"]);
+        delete admin.high;
+        console.log(admin.high); // undefined
+        admin["high"] = 22;
+        console.log(admin.high);
+    </script>
+</body>
+</html>
