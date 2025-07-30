@@ -9,6 +9,10 @@
         form span {
             color: red;
         }
+
+        form p {
+            white-space: pre-line;
+        }
     </style>
 </head>
 
@@ -37,13 +41,16 @@
         let btn = document.querySelector("#btn");
 
         btn.addEventListener("click", ()=>{
+            let strMsg = "";
             if (uid.value == ""){
-                msg.textContent = "帳號不能空白";
-            }else if (upw.value == ""){
-                msg.textContent = "密碼不能空白";
-            }else {
-                msg.textContent = "";
+                strMsg += "帳號不能空白\n";
             }
+            if (upw.value == ""){
+                strMsg += "密碼不能空白";
+            }
+            msg.style.color = "yellow";
+            msg.textContent = strMsg;
+            
         })
 
         uid.addEventListener("blur", ()=>{
@@ -55,13 +62,8 @@
         })
 
         upw.addEventListener("blur", ()=>{
-<<<<<<< Updated upstream
-            if (upw.value.length<10){
-                msg.textContent = "密碼需要10字元";
-=======
             if (upw.value.length<14){
                 msg.textContent = "密碼需要14字元";
->>>>>>> Stashed changes
             } else {
                 msg.textContent = "";
             }
