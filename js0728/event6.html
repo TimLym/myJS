@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="userId">會員編號：</label>
+        <input type="text" id="userId" size="10" maxlength="8"><br>
+        <span id="msg"></span><br>
+        <input type="submit" value="送出">
+    </form>
+
+    <script>
+        let userId = document.querySelector("#userId");
+        let msg = document.querySelector("#msg");
+
+        msg.style.color = "red";
+
+        // 游標在文字方塊上時
+        userId.addEventListener("focus", ()=>{
+            msg.textContent = "會員編號需是8字元";
+            console.log(userId.value.length);
+        })
+
+        // 游標離開文字方塊時
+        userId.addEventListener("blur", ()=>{
+            if(userId.value.length <8) {
+                msg.textContent = "!!會員編號需是8字元啦";
+            }else{
+                msg.textContent = "good";
+            }
+            
+        })
+    </script>
+</body>
+</html>

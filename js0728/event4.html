@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="url">請選擇網站</label>
+        <!-- 下拉式清單 -->
+        <select id="url">
+            <option value="">請選擇</option>
+            <!-- value = "javascript:;" 為空連結表示法 -->
+            <option value="https://www.audi.com.tw">Audi</option>
+            <option value="https://www.bmw.com.tw">BMW</option>
+            <option value="https://www.tesla.com">Tesla</option>
+            <option value="http://127.0.0.1:5500/js0728/event2.html">changePic</option>
+        </select>
+    </form>
+
+    <script>
+        // 取得下拉清單的位置
+        let url = document.querySelector("#url");
+
+        url.addEventListener("change", ()=>{
+            // console.log(url.value);
+            // console.log(typeof url.value);
+            if(url.value){
+                let newWindow = open(); //開新分頁
+                newWindow.location.href = url.value;
+            }
+        })
+    </script>
+
+</body>
+</html>

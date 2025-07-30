@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件處理方式 -->
+
+    <!-- 標籤綁定 -->
+    <button type="button" onclick="alert('Hi')">顯示訊息</button>
+    <button type="button" onclick="sayHi('Hi')">顯示訊息2</button>
+    
+    <!-- 監聽事件 -->
+    <button type="button" id="btn1">顯示訊息3</button>
+    <button type="button" id="btn2">顯示訊息4</button>
+
+    <script>
+        function sayHi(str) {
+            alert(str);
+        }
+
+        let btn1= document.getElementById("btn1");
+        btn1.addEventListener("click", ()=>{
+            alert("hi!");
+        })
+
+        let btn2 = document.querySelector("#btn2");
+        btn2.addEventListener("click", ()=>{
+            alert("hi!!");
+        })
+    </script>
+</body>
+</html>

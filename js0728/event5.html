@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="checkbox" id="agree">我同意合約
+        <span id="msg"></span><br>
+        <input type="submit" value="送出">
+    </form>
+
+    <script>
+        // 取得表單
+        let myForm = document.querySelector("#myForm");
+        // 取得核取方塊
+        let agree= document.querySelector("#agree");
+        // 取得訊息位置
+        let msg = document.querySelector("#msg");
+
+        myForm.addEventListener("submit", (e)=>{
+            
+            if (!agree.checked) {
+                msg.textContent = "須同意合約";
+                msg.style.color = "red";
+                e.preventDefault(); // 取消預設行為
+            }
+        })
+
+
+    </script>
+</body>
+</html>
