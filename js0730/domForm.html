@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- input 增加required屬性 必須填寫資料-->
+    <form action="">
+        <!-- 文字方塊 -->
+        <label for="uid"><span">*</span>帳號：</label>
+        <input type="text" id="uid" >
+        <!-- 密碼 -->
+        <label for="upw"><span>*</span>密碼：</label>
+        <input type="password" id="upw" >
+        <!-- err訊息 -->
+        <p id="msg"></p>
+
+        <!-- 送出 -->
+        <input type="button" value="送出" id="btn">
+        <!-- 清除 -->
+        <input type="reset" value="重新填寫">
+
+    </form>
+    <script>
+        let uid = document.querySelector("#uid");
+        let upw = document.querySelector("#upw");
+        let msg = document.querySelector("#msg");
+        let btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", ()=>{
+            if (uid.value == ""){
+                msg.textContent = "帳號不能空白";
+            }else if (upw.value == ""){
+                msg.textContent = "密碼不能空白";
+            }else {
+                msg.textContent = "";
+            }
+        })
+
+        uid.addEventListener("blur", ()=>{
+            if (uid.value.length<12){
+                msg.textContent = "帳號需要12字元";
+            } else {
+                msg.textContent = "";
+            }
+        })
+
+        upw.addEventListener("blur", ()=>{
+            if (upw.value.length<8){
+                msg.textContent = "密碼需要8字元";
+            } else {
+                msg.textContent = "";
+            }
+        })
+
+    </script>
+</body>
+
+</html>
